@@ -1,0 +1,56 @@
+.notes-card {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.notes-input-group {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0 1.5rem 0;
+}
+
+.notes-input-group input {
+  flex: 1;
+  padding: 0.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.notes-input-group button {
+  background-color: var(--text-main);
+  color: white;
+  border: none;
+  padding: 0 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.notes-list {
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.notes-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8fafc;
+  padding: 0.6rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.notes-item button {
+  background: none;
+  border: none;
+  color: var(--danger);
+  font-size: 1.4rem;
+  cursor: pointer;
+  line-height: 1;
+}

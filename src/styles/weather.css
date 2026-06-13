@@ -1,0 +1,34 @@
+.weather-card {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+
+.weather-card.loading {
+  background: #cbd5e1;
+  color: var(--text-muted);
+  justify-content: center;
+  font-weight: 500;
+  padding: 2rem;
+}
+
+.weather-main h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+}
+
+.weather-temp {
+  font-size: 2.5rem;
+  font-weight: bold;
+  display: block;
+}
+
+.weather-details {
+  text-align: right;
+  line-height: 1.6;
+}
