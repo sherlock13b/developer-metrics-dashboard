@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Developer Metrics & Resource Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a fast and responsive web application built with **React.js**. It works like a real-time tracking dashboard for developer metrics. 
 
-## Available Scripts
+I designed and built the entire interface using **pure, custom CSS3 (Flexbox and Grid)** without using any external design frameworks like Tailwind or Bootstrap. This shows my strong foundational grip on writing clean, raw styling code.
 
-In the project directory, you can run:
+## ✨ Main Features
 
-### `npm start`
+* **Clean Structure:** The project is broken down into small, reusable React components that handle their own states easily.
+* **Loading Animations:** It uses React hooks (`useEffect`) to simulate real network delay, showing clean loading states before displaying the dashboard details.
+* **Smart Performance:** It uses the `useMemo` hook to remember heavy calculations. This keeps the application super fast and stops the screen from lagging when a user types.
+* **Data Saving:** It connects directly to the browser's **LocalStorage API**. This means your dashboard changes are saved safely even if you refresh or close the webpage.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Built With
 
-### `npm test`
+* **Frontend:** React.js & JavaScript (ES6)
+* **Styling:** Pure CSS3 (Advanced Flexbox & Grid layouts)
+* **Version Control:** Git and GitHub
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📂 Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```text
+src/
+├── components/
+│   ├── MetricsDashboard.jsx     # Main dashboard control room
+│   ├── ExpenseTracker.jsx       # Money and data tracking logic
+│   └── AnalyticsMetrics.jsx     # Number displays and counters
+├── styles/
+│   └── Dashboard.css            # Custom CSS layouts and alignments
+├── App.jsx                      # Main app setup track
+└── main.jsx                     # Starting point of the application
