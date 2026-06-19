@@ -9,7 +9,6 @@ function ExpenseTracker() {
   const [title, setTitle] = useState('');
   const [amount, setAmount] = useState('');
 
-  // Performance Optimization via useMemo tracking dependency mutations
   const totalExpenditure = useMemo(() => {
     return expenses.reduce((sum, item) => sum + item.amount, 0);
   }, [expenses]);

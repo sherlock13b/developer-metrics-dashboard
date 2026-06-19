@@ -3,9 +3,10 @@ import '../styles/notes.css';
 
 function QuickNotes() {
   const [notes, setNotes] = useState(() => {
-    const saved = localStorage.getItem('dashboard_notes');
-    return saved ? JSON.parse(saved) : [];
+    const savedNotes = localStorage.getItem('dashboard_notes');
+    return savedNotes ? JSON.parse(savedNotes) : [];
   });
+
   const [inputText, setInputText] = useState('');
 
   useEffect(() => {
@@ -14,31 +15,49 @@ function QuickNotes() {
 
   const handleAddNote = () => {
     if (!inputText.trim()) return;
-    setNotes([...notes, { id: Date.now(), text: inputText }]);
+
+    const newNote = {
+      id: Date.now(),
+      text: inputText.trim(),
+    };
+
+    setNotes((prevNotes) => [...prevNotes, newNote]);
     setInputText('');
   };
 
   const handleDeleteNote = (id) => {
-    setNotes(notes.filter(note => note.id !== id));
+    setNotes((prevNotes) =>
+      prevNotes.filter((note) => note.id !== id)
+    );
   };
 
   return (
     <div className="notes-card">
-      <h3>System Memory Storage</h3>
+      <h3>Quick Notes</h3>
+
       <div className="notes-input-group">
-        <input 
-          type="text" 
+        <input
+          type="text"
+          placeholder="Enter a note..."
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
-          placeholder="Store persistent session keys..."
         />
-        <button onClick={handleAddNote}>Commit</button>
+
+        <button onClick={handleAddNote}>
+          Add Note
+        </button>
       </div>
+
       <ul className="notes-list">
-        {notes.map(note => (
+        {notes.map((note) => (
           <li key={note.id} className="notes-item">
             <span>{note.text}</span>
-            <button onClick={() => handleDeleteNote(note.id)}>×</button>
+
+            <button
+              onClick={() => handleDeleteNote(note.id)}
+            >
+              ×
+            </button>
           </li>
         ))}
       </ul>
