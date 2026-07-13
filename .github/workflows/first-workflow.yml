@@ -1,4 +1,4 @@
-name: My First GitHub Action
+name: React CI Pipeline
 
 on:
   push:
@@ -6,9 +6,23 @@ on:
       - main
 
 jobs:
-  first-job:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print Welcome Message
-        run: echo "Hello from GitHub Actions!"
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build React Project
+        run: npm run build
+
+      - name: Build Successful
+        run: echo "React project built successfully!"
