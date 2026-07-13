@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="dashboard-container">
       <header className="dashboard-header">
-        <h1>Developer Metrics Dashboard</h1>
+        <h1>Docker Bind Mount Demo </h1>
         <p>Production monitoring, state synchronization, and storage allocation hub.</p>
       </header>
       
