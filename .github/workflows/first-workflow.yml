@@ -36,5 +36,15 @@ jobs:
       - name: Push Docker Image
         run: docker push sherlock13b/developer-dashboard:latest
 
-      - name: Pipeline Completed
-        run: echo "Docker image pushed successfully!"
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+
+          script: |
+            sudo docker pull sherlock13b/developer-dashboard:latest
+            sudo docker stop react-app || true
+            sudo docker rm react-app || true
+            sudo docker run -d --name react-app -p 80:80 sherlock13b/developer-dashboard:latest
